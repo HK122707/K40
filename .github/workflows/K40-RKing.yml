@@ -1,8 +1,8 @@
 name: Build MIUI-RKing
 
 on: 
-  workflow_dispatch:
-  https://raw.githubusercontent.com/ZyCromerZ/Clang/main/Clang-main-link.txt
+  workflow_dispatch:  
+  
 jobs:
   build:
     runs-on: ubuntu-latest
