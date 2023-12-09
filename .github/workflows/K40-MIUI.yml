@@ -36,7 +36,7 @@ jobs:
         git clone --depth=1 https://github.com/HK122707/AnyKernel3 -b mian K40
         sed -i 's/CONFIG_ZRAM=y/# CONFIG_ZRAM=y/g' arch/arm64/configs/alioth_defconfig     
         sed -i 's/CONFIG_LOCALVERSION/# CONFIG_LOCALVERSION/g' arch/arm64/configs/alioth_defconfig        
-        sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c        
+        #sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c        
         sed -i '1i CONFIG_LOCALVERSION="-ReaKing" ' arch/arm64/configs/alioth_defconfig
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
                  
