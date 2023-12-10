@@ -25,7 +25,7 @@ jobs:
         mkdir clang
         cd clang
         txt=$(curl -s https://raw.githubusercontent.com/ZyCromerZ/Clang/main/Clang-main-link.txt)
-        wget -q https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230724-release/Clang-17.0.0-20230724.tar.gz -O clang.tar.gz
+        wget -q $txt -O clang.tar.gz
         tar -xzvf clang.tar.gz
         CLANG_DIR=`pwd`
         echo "CLANG_DIR=$CLANG_DIR" >> $GITHUB_ENV
