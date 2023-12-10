@@ -31,9 +31,9 @@ jobs:
       run: |        
         cd android-kernel
         git clone --depth=1 https://github.com/HK122707/AnyKernel3 -b mian K40
-        sed -i 's/CONFIG_ZRAM=y/# CONFIG_ZRAM=y/g' arch/arm64/configs/alioth_defconfig      
+        sed -i 's/CONFIG_ZRAM=y/# CONFIG_ZRAM=y/g' arch/arm64/configs/vendor/alioth_defconfig      
         sed -i 's/CONFIG_LOCALVERSION/# CONFIG_LOCALVERSION/g' arch/arm64/configs/vendor/alioth_defconfig
-        sed -i '1i CONFIG_LOCALVERSION="-RealKing" ' arch/arm64/configs/alioth_defconfig
+        sed -i '1i CONFIG_LOCALVERSION="-RealKing" ' arch/arm64/configs/vendor/alioth_defconfig
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
                  
     - name: Generate Kernel Configuration
@@ -41,7 +41,7 @@ jobs:
         cd android-kernel
         PATH=${{ env.CLANG_DIR }}/bin:$PATH
         DEVICE_NAME=alioth
-        KERNEL_DEFCONFIG=alioth_defconfig
+        KERNEL_DEFCONFIG=vendor/alioth_defconfig
         KERNEL_DIR=`pwd`
         echo "KERNEL_DIR=${KERNEL_DIR}" >> $GITHUB_ENV
         echo "ZIMAGE_DIR="${KERNEL_DIR}/out/arch/arm64/boot"" >> $GITHUB_ENV
