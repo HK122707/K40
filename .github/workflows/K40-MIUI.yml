@@ -1,4 +1,4 @@
-name: Build MIUI-RK K40
+name: Build MIUI-K40
 
 on: 
   workflow_dispatch:
