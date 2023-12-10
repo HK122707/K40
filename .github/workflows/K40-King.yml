@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Checkout Kernel Source Code
       run: |
-        git clone --depth=1 https://codeberg.org/HK122707/870 -b main android-kernel
+        git clone --depth=1 https://codeberg.org/HK122707/8250 -b upstream android-kernel
                                      
     - name: Setup Build Environment
       run: |
