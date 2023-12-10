@@ -40,7 +40,6 @@ jobs:
         sed -i '28s/.*/    qcom,nom-batt-capacity-mah = <4820>;/' arch/arm64/boot/dts/vendor/qcom/fg-gen4-batterydata-alioth-FMT-4520mah.dtsi
         sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c
         sed -i '238a \' drivers/Kconfig
-        sed -i 's/default n/depends on MIHW/g' drivers/Kconfig
         sed -i '59s/.*/    depends on MIHW' drivers/android/Kconfig
         sed -i '60s/.*/     ---help---' drivers/android/Kconfig
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
