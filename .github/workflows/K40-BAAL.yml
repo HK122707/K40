@@ -40,6 +40,7 @@ jobs:
         sed -i '28s/.*/    qcom,nom-batt-capacity-mah = <4820>;/' arch/arm64/boot/dts/vendor/qcom/fg-gen4-batterydata-alioth-FMT-4520mah.dtsi
         sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c
         sed -i '238a \' drivers/Kconfig
+        sed -i 's/default n/depends on MIHW/g' drivers/Kconfig
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
         wget -q https://raw.githubusercontent.com/HK122707/K40/main/KSU.patch -O KernelSU.patch
         git apply ./KernelSU.patch       
