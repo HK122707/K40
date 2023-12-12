@@ -1,4 +1,4 @@
-name: Build Hyper
+name: Build MIOS
 
 on: 
   workflow_dispatch:  
