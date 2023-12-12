@@ -33,7 +33,7 @@ jobs:
     - name: Setup KernelSU
       run: |        
         cd android-kernel
-        git clone --depth=1 https://github.com/HK122707/AnyKernel3 -b mian K40
+        git clone --depth=1 https://github.com/HK122707/AnyKernel3 -b main K40
         sed -i 's/CONFIG_ZRAM=y/# CONFIG_ZRAM=y/g' arch/arm64/configs/alioth_defconfig  
         sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c        
         sed -i '1s/.*/CONFIG_LOCALVERSION="-RKing"/' arch/arm64/configs/alioth_defconfig
