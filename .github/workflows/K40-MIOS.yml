@@ -48,7 +48,7 @@ jobs:
         KBUILD_BUILD_HOST=GitHub
         KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)          
         make CC=clang O=out ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_COMPAT=arm-linux-gnueabi- NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip $KERNEL_DEFCONFIG
-        echo "ZIMAGE_NAME=RealKing" >> $GITHUB_ENV
+        echo "ZIMAGE_NAME=RKing" >> $GITHUB_ENV
 
     - name: Build Kernel
       run: |
