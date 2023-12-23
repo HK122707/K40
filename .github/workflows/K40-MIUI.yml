@@ -35,8 +35,10 @@ jobs:
         cd android-kernel
         git clone --depth=1 https://github.com/HK122707/AnyKernel3 -b main K40
         sed -i 's/CONFIG_ZRAM=y/# CONFIG_ZRAM=y/g' arch/arm64/configs/alioth_defconfig  
-        sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c        
-        sed -i '1s/.*/CONFIG_LOCALVERSION="-RKing"/' arch/arm64/configs/alioth_defconfig
+        sed -i '766s/.*/    *learned_cap_uah = 4820 * 1000;/' drivers/power/supply/qcom/qpnp-fg-gen4.c
+        sed -i 's/qcom,mdss-pan-physical-width-dimension = <70>;$/qcom,mdss-pan-physical-width-dimension = <700>;/' arch/arm64/boot/dts/vendor/qcom/dsi-panel-k11a-38-08-0a-dsc-cmd.dtsi
+        sed -i 's/qcom,mdss-pan-physical-height-dimension = <155>;$/qcom,mdss-pan-physical-height-dimension = <1540>;/' arch/arm64/boot/dts/vendor/qcom/dsi-panel-k11a-38-08-0a-dsc-cmd.dtsi     
+        sed -i '1s/.*/CONFIG_LOCALVERSION="-MIOS"/' arch/arm64/configs/alioth_defconfig
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
         
     - name: Generate Kernel Configuration
