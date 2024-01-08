@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Checkout Kernel Source Code
       run: |
-        git clone --depth=1 https://gitee.com/chen-shibin88/miui -b base android-kernel
+        git clone --depth=1 https://gitee.com/chen-shibin88/miui -b main android-kernel
                                      
     - name: Setup Build Environment
       run: |
