@@ -1854,16 +1854,6 @@ static bool perf_event_validate_size(struct perf_event *event)
 	if (event->read_size + event->header_size +
 	    event->id_header_size + sizeof(struct perf_event_header) >= 16*1024)
 		return false;
-
-	/*
-	 * When creating a new group leader, group_leader->ctx is initialized
-	 * after the size has been validated, but we cannot safely use
-	 * for_each_sibling_event() until group_leader->ctx is set. A new group
-	 * leader cannot have any siblings yet, so we can safely skip checking
-	 * the non-existent siblings.
-	 */
-	if (event == group_leader)
-		return true;
 	
 	return true;
 }
