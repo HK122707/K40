@@ -1,23 +1,20 @@
-name: MIUIOS
+name: MIUI-K40
 
-on:
+on: 
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      IS_RELEASE:
-        required: true
-        default: true
-        type: boolean
   
 jobs:
   build:
-    name: MIUI K40
     runs-on: ubuntu-latest
-    steps:    
+    steps: 
     - name: Checkout Kernel Source Code
-      run: |
-        git clone --depth=1 https://github.com/HK122707/K40 -b base android-kernel
-      
+      uses: actions/checkout@v3
+      with:
+        github-server-url: 'https://github.com'
+        repository: HK122707/K40
+        ref: base
+        path: android-kernel      
+    
     - name: Setup Build Environment
       run: |
         sudo apt-get update
@@ -25,11 +22,10 @@ jobs:
     
     - name: Download Clang Toolchain
       run: |
-        cd ..
         mkdir Clang
         cd Clang
         T=$(curl -s https://raw.githubusercontent.com/ZyCromerZ/Clang/main/Clang-main-link.txt)
-        wget -O Clang.tar.gz $T
+        wget -q $T -O Clang.tar.gz
         tar -zvxf Clang.tar.gz
         CLANG_DIR=`pwd`
         echo "CLANG_DIR=$CLANG_DIR" >> $GITHUB_ENV
