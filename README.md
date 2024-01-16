@@ -1,1 +1,1 @@
-KernelSU 4.19
+KernelSU Android Linux 4.19
