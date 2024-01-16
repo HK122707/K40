@@ -68,8 +68,5 @@ jobs:
       with:
         name: ${{ env.ZIMAGE_NAME }}
         path: android-kernel/anykernel/*
-        
-
-    
           
 
