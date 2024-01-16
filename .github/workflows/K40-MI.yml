@@ -28,7 +28,9 @@ jobs:
         wget -q $T -O Clang.tar.gz
         tar -zvxf Clang.tar.gz
         CLANG_DIR=`pwd`
+        CONFIG_ENV=$(cat config.env | grep -w "CONFIG_ENV" | head -n 1 | cut -d "=" -f 2)
         echo "CLANG_DIR=$CLANG_DIR" >> $GITHUB_ENV
+        echo "ENABLE_CCACHE=$(cat $CONFIG_ENV | grep -w "ENABLE_CCACHE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
           
     - name: Generate Kernel Configuration
       run: |
