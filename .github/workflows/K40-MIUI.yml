@@ -42,7 +42,7 @@ jobs:
         ARCH=arm64
         SUBARCH=arm64
         cd $KERNEL_DIR
-        make $KERNEL_DEFCONFIG O=out CC=clang ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip        
+        make $KERNEL_DEFCONFIG O=out CC=clang ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip
         echo "ZIMAGE_NAME=MIUIOS" >> $GITHUB_ENV
                 
     - name: Build Kernel
