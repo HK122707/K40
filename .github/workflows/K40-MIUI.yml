@@ -63,6 +63,7 @@ jobs:
       run: |
         cd android-kernel
         cp -fp ${{ env.ZIMAGE_DIR }}/Image.gz anykernel
+        cp -fp ${{ env.ZIMAGE_DIR }}/dtb anykernel        
         TIME=$(TZ=Asia/Shanghai date "+%H%M")
         echo "ZIMAGE_NAME=MIUIOS-"$TIME >> $GITHUB_ENV
         rm -rf out
