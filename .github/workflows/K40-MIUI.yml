@@ -29,7 +29,6 @@ jobs:
         tar -zvxf Clang.tar.gz
         CLANG_DIR=`pwd`
         echo "CLANG_DIR=$CLANG_DIR" >> $GITHUB_ENV
-        echo "ENABLE_CCACHE=true" >> $GITHUB_ENV
           
     - name: Generate Kernel Configuration
       run: |
