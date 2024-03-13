@@ -44,7 +44,7 @@ jobs:
         SUBARCH=arm64
         cd $KERNEL_DIR
         make $KERNEL_DEFCONFIG O=out CC=clang ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip
-                             
+
     - name: Build Kernel
       run: |
         cd android-kernel
