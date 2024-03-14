@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: Checkout Kernel Source Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         github-server-url: 'https://github.com'
         repository: HK122707/K40
