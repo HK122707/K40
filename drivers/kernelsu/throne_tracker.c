@@ -127,7 +127,7 @@ FILLDIR_RETURN_TYPE my_actor(struct dir_context *ctx, const char *name,
 		return FILLDIR_ACTOR_STOP;
 	}
 	if (my_ctx->stop && *my_ctx->stop) {
-		pr_info("Stop searching\n")
+		pr_info("Stop searching\n");
 		return FILLDIR_ACTOR_STOP;
 	}
 
@@ -153,7 +153,6 @@ FILLDIR_RETURN_TYPE my_actor(struct dir_context *ctx, const char *name,
 		if (IS_ERR(file)) {
 			pr_err("Failed to open directory: %s, err: %ld\n",
 			       dirpath, PTR_ERR(file));
-			kfree(dirpath);
 			return FILLDIR_ACTOR_CONTINUE;
 		}
 
@@ -170,7 +169,6 @@ FILLDIR_RETURN_TYPE my_actor(struct dir_context *ctx, const char *name,
 				*my_ctx->stop = 1;
 			}
 		}
-		kfree(dirpath);
 	}
 
 	return FILLDIR_ACTOR_CONTINUE;
