@@ -33,7 +33,7 @@ jobs:
     - name: Generate Kernel Configuration
       run: |
         cd android-kernel
-        curl -LSs "https://raw.githubusercontent.com/HK122707/K40/main/kernel/setup.sh" | bash
+        curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
         PATH=${{ env.CLANG_DIR }}/bin:$PATH
         DEVICE_NAME=alioth
         KERNEL_DEFCONFIG=alioth_defconfig
